@@ -3,14 +3,14 @@ class Flight():
 
     flight_id_var = 1
 
-    def __init__(self, flight_number, origin, destination, date_time, passengers_on_flight=[]):
+    def __init__(self, flight_number, origin, destination, date_time):
         self.flight_number = flight_number
-        self.passengers_on_flight = passengers_on_flight
         self.origin = origin
         self.destination = destination
         self.date_time = date_time
         self.__id = Flight.flight_id_var
         Flight.flight_id_var += 1
+        self.passengers_on_flight = []
 
     def counter_id(self):
         return self.flight_id_var
@@ -19,7 +19,7 @@ class Flight():
         return self.__id
 
 
-    def add_passenger(self, passenger):
+    def add_passenger_to_flight(self, passenger):
         if passenger not in self.passengers_on_flight:
             self.passengers_on_flight.append(passenger)
 
@@ -31,16 +31,5 @@ class Flight():
     def count_passengers_on_flight(self):
         return len(self.passengers_on_flight)
 
-
-#behaviour - flight number
-#origin
-# destination
-# date time
-
-
-
-#####Important to link: People - passengers
-
-#Flight
-
-#Aircraft - plane
+    def boarding_list(self):
+        return self.passengers_on_flight

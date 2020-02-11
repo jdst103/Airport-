@@ -1,8 +1,8 @@
 from People_class import People
 
-
-#employees inherited from People class
-
 class Employees(People):
-    def __init__(self, name):
+    def __init__(self, name, pay):
         super().__init__(name)
+        self.pay = pay
+        self.email = name + '@workmail.com'
+
